@@ -1,0 +1,11 @@
+{
+    "MAX_SITES": 20,
+    "MEMORY_DB": true,
+    "POSTGRES_CONF": {
+        "host": "127.0.0.1",
+        "port": 5672,
+        "user": "postgres",
+        "password": "password",
+        "db": "rcs"
+    }
+}
