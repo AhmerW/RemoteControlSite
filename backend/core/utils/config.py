@@ -1,19 +1,20 @@
-from sys import exit
+import os
 
-from fastapi import FastAPI
-
-import json 
+import json
 import logging
 
-config = None
-app = FastAPI(title = 'RCS', redoc_url = None)
-
+CONFIG_PATH = os.path.join('core', 'utils', 'config.json')
 logger = logging.getLogger(__name__)
 
-if config is None:
+
+def loadConfig():
     try:
-        with open("config.json", "r") as f:
-            config = json.load(f)
+        with open(CONFIG_PATH, "r") as f:
+            return json.load(f)
     except FileNotFoundError:
-        logger.error("config.json file is missing. Required to run the application")
+        logger.error(
+            "config.json file is missing. Required to run the application")
         exit()
+
+
+config = loadConfig()

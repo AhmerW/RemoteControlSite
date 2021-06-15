@@ -1,0 +1,3 @@
+
+class SiteManager:
+    pass

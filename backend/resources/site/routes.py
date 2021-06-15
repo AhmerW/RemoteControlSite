@@ -4,5 +4,5 @@ router = APIRouter()
 
 
 @router.post('/new')
-async def site_new(self):
+async def newSite(self):
     pass
